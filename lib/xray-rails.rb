@@ -101,7 +101,7 @@ module Xray
     cmd = if editor.include?('$file')
       editor.gsub '$file', file
     else
-      "#{editor} #{file}"
+      "#{editor} \"#{file}\""
     end
     Open3.capture3(cmd)
   end
